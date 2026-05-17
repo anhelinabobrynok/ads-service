@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdBoard — view announcement details">
+    <meta name="author" content="Student Lab 1">
+    <title>Apartment for rent — AdBoard</title>
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body>
+
+    <div class="app-shell">
+
+      <!-- Header -->
+      <header class="site-header" role="banner">
+        <a href="../index.html" class="site-header__logo">Ad<span>Board</span></a>
+        <div class="site-header__actions">
+          <div class="site-header__location">📍 Lviv, UA</div>
+          <div class="site-header__user">
+            <div class="site-header__avatar" aria-hidden="true">JD</div>
+            <span>john_doe</span>
+          </div>
+          <a href="login.html" class="btn--secondary">Logout</a>
+          <button class="site-header__menu-toggle" aria-label="Toggle navigation" type="button">☰</button>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" role="navigation" aria-label="Main navigation">
+        <p class="sidebar__section-label">Browse</p>
+        <a href="../index.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📋</span>All Announcements
+        </a>
+        <a href="public.html" class="sidebar__nav-link--active" aria-current="page">
+          <span class="sidebar__nav-icon" aria-hidden="true">🌐</span>Public
+        </a>
+        <a href="local.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📍</span>Local (Lviv)
+        </a>
+        <p class="sidebar__section-label">My Content</p>
+        <a href="my-announcements.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">✏️</span>My Announcements
+        </a>
+      </nav>
+
+      <!-- Main content: announcement detail -->
+      <main class="main-content" role="main">
+
+        <a href="../index.html" class="announcement-detail__back">← Back to Announcements</a>
+
+        <article class="announcement-detail">
+
+          <!-- Visibility badge -->
+          <div class="announcement-detail__badges">
+            <span class="badge-public">Public</span>
+            <span class="badge-user">Housing</span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="announcement-detail__title">
+            Apartment for rent in the city center — 2 rooms, fully furnished
+          </h1>
+
+          <!-- Meta information row -->
+          <div class="announcement-detail__meta-row">
+            <div class="announcement-detail__meta-item">
+              <span class="announcement-detail__meta-label">Author</span>
+              <span class="announcement-detail__meta-value">john_doe</span>
+            </div>
+            <div class="announcement-detail__meta-item">
+              <span class="announcement-detail__meta-label">Published</span>
+              <span class="announcement-detail__meta-value">
+                <time datetime="2024-05-10">May 10, 2024</time>
+              </span>
+            </div>
+            <div class="announcement-detail__meta-item">
+              <span class="announcement-detail__meta-label">Visibility</span>
+              <span class="announcement-detail__meta-value">Public</span>
+            </div>
+            <div class="announcement-detail__meta-item">
+              <span class="announcement-detail__meta-label">Contact</span>
+              <span class="announcement-detail__meta-value">+38 (050) 123-45-67</span>
+            </div>
+          </div>
+
+          <!-- Visibility explanation banner -->
+          <div class="announcement-detail__level-section">
+            <span class="announcement-detail__level-icon" aria-hidden="true">🌐</span>
+            <div class="announcement-detail__level-text">
+              <strong>Public announcement</strong>
+              This announcement is visible to everyone — including visitors who are not registered.
+            </div>
+          </div>
+
+          <!-- Full body text -->
+          <div class="announcement-detail__body">
+            <p>
+              Spacious 2-bedroom apartment available for rent from June 1st, 2024. Located in the
+              heart of the city, just 5 minutes walk from Rynok Square. The apartment is fully
+              furnished and equipped with everything you need.
+            </p>
+            <p>
+              Includes: high-speed fiber internet, TV, washing machine, dishwasher, and private
+              underground parking. The building has 24/7 security and a video intercom system.
+            </p>
+            <p>
+              Price: 18 000 UAH/month + utilities. Long-term lease preferred (12+ months).
+              No pets. Serious inquiries only — please call before 21:00.
+            </p>
+          </div>
+
+          <!-- Action buttons (author-only) -->
+          <div class="announcement-detail__actions">
+            <a href="edit-announcement.html" class="btn--primary">✏️ Edit</a>
+            <a href="delete-confirm.html" class="btn--danger">🗑 Delete</a>
+          </div>
+
+        </article>
+
+      </main>
+
+    </div>
+
+  </body>
+</html>

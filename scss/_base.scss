@@ -1,0 +1,134 @@
+// ============================================================
+// _base.scss — Reset and base element styles
+// ============================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* Box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* HTML & Body */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $color-bg;
+  color: $color-text-primary;
+  font-family: $font-body;
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Links */
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:visited {
+    color: $color-primary-dark;
+  }
+
+  &:hover {
+    color: $color-primary-light;
+  }
+
+  &:active {
+    color: $color-primary-dark;
+  }
+}
+
+/* Lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-display;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $color-text-primary;
+}
+
+/* Paragraphs */
+p {
+  color: $color-text-secondary;
+  line-height: 1.7;
+}
+
+/* Inputs & buttons */
+button,
+input,
+select,
+textarea {
+  font-family: $font-body;
+}
+
+/* Keyframe animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-border {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba($color-primary, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba($color-primary, 0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

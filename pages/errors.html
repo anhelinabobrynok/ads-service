@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdBoard — page not found">
+    <meta name="author" content="Student Lab 1">
+    <title>404 Not Found — AdBoard</title>
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body>
+
+    <div class="app-shell">
+
+      <!-- Header -->
+      <header class="site-header" role="banner">
+        <a href="../index.html" class="site-header__logo">Ad<span>Board</span></a>
+        <div class="site-header__actions">
+          <div class="site-header__user">
+            <div class="site-header__avatar" aria-hidden="true">JD</div>
+            <span>john_doe</span>
+          </div>
+          <a href="login.html" class="btn--secondary">Logout</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" role="navigation" aria-label="Main navigation">
+        <p class="sidebar__section-label">Browse</p>
+        <a href="../index.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📋</span>All Announcements
+        </a>
+        <a href="public.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">🌐</span>Public
+        </a>
+        <a href="local.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📍</span>Local (Lviv)
+        </a>
+      </nav>
+
+      <!-- Main content: error states demo + 404 -->
+      <main class="main-content" role="main">
+
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">Error <span>States</span></h1>
+            <p class="page-header__subtitle">All notification and error components</p>
+          </div>
+        </header>
+
+        <!-- Section: Notifications -->
+        <section aria-labelledby="notifications-heading">
+          <h2 id="notifications-heading" style="font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:16px; color:#eef0f8;">
+            Notification types
+          </h2>
+
+          <!-- Success notification -->
+          <div class="alert--success" role="status" aria-live="polite">
+            <span class="alert__icon" aria-hidden="true">✓</span>
+            <div class="alert__content">
+              <p class="alert__title">Success</p>
+              <p class="alert__message">Your announcement has been published successfully.</p>
+            </div>
+            <button class="alert__close" aria-label="Close notification" type="button">✕</button>
+          </div>
+
+          <!-- Error notification -->
+          <div class="alert--error" role="alert" aria-live="assertive">
+            <span class="alert__icon" aria-hidden="true">✕</span>
+            <div class="alert__content">
+              <p class="alert__title">Error</p>
+              <p class="alert__message">Something went wrong. Please try again or contact support.</p>
+            </div>
+            <button class="alert__close" aria-label="Close notification" type="button">✕</button>
+          </div>
+
+          <!-- Warning notification -->
+          <div class="alert--warning" role="alert">
+            <span class="alert__icon" aria-hidden="true">⚠</span>
+            <div class="alert__content">
+              <p class="alert__title">Warning</p>
+              <p class="alert__message">You are about to perform an irreversible action. Please confirm.</p>
+            </div>
+            <button class="alert__close" aria-label="Close notification" type="button">✕</button>
+          </div>
+        </section>
+
+        <!-- Section: Validation errors example -->
+        <section aria-labelledby="validation-heading" style="margin-top:40px;">
+          <h2 id="validation-heading" style="font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:16px; color:#eef0f8;">
+            Form validation errors
+          </h2>
+
+          <div class="announcement-detail" style="max-width:480px; padding:32px;">
+
+            <form action="#" method="post" novalidate>
+
+              <div class="form-group">
+                <label class="form-label" for="demo-username">Username</label>
+                <input
+                  class="form-input--error"
+                  type="text"
+                  id="demo-username"
+                  name="username"
+                  value=""
+                  placeholder="Enter username"
+                  aria-describedby="demo-username-err"
+                >
+                <span class="form-error" id="demo-username-err">Username is required</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="demo-password">Password</label>
+                <input
+                  class="form-input--error"
+                  type="password"
+                  id="demo-password"
+                  name="password"
+                  placeholder="Min 8 characters"
+                  aria-describedby="demo-password-err"
+                >
+                <span class="form-error" id="demo-password-err">Password must be at least 8 characters</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="demo-confirm">Confirm Password</label>
+                <input
+                  class="form-input--error"
+                  type="password"
+                  id="demo-confirm"
+                  name="confirm"
+                  placeholder="Repeat password"
+                  aria-describedby="demo-confirm-err"
+                >
+                <span class="form-error" id="demo-confirm-err">Passwords do not match</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="demo-role">Role</label>
+                <select
+                  class="form-select"
+                  id="demo-role"
+                  name="role"
+                  aria-describedby="demo-role-err"
+                >
+                  <option value="">Select role…</option>
+                  <option value="regular">Regular User</option>
+                  <option value="admin">Administrator</option>
+                </select>
+                <span class="form-error" id="demo-role-err">Please select a role</span>
+              </div>
+
+            </form>
+
+          </div>
+        </section>
+
+        <!-- Section: 404 / empty state -->
+        <section aria-labelledby="empty-heading" style="margin-top:40px;">
+          <h2 id="empty-heading" style="font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:16px; color:#eef0f8;">
+            404 / Empty state
+          </h2>
+
+          <div class="announcement-detail" style="max-width:600px;">
+            <div class="empty-state">
+              <p class="empty-state__icon" aria-hidden="true">🔍</p>
+              <h3 class="empty-state__title">Page not found</h3>
+              <p class="empty-state__desc">
+                The page you are looking for does not exist or has been removed.
+              </p>
+              <a href="../index.html" class="btn--primary" style="margin-top:8px;">Go to Home</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Unauthorized access error -->
+        <section aria-labelledby="auth-error-heading" style="margin-top:40px;">
+          <h2 id="auth-error-heading" style="font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:16px; color:#eef0f8;">
+            Access denied
+          </h2>
+
+          <div class="announcement-detail" style="max-width:600px;">
+            <div class="empty-state">
+              <p class="empty-state__icon" aria-hidden="true">🔒</p>
+              <h3 class="empty-state__title">Access denied</h3>
+              <p class="empty-state__desc">
+                You do not have permission to view this page.
+                Please log in with an administrator account.
+              </p>
+              <div style="display:flex; gap:12px; margin-top:16px;">
+                <a href="login.html" class="btn--primary">Log In</a>
+                <a href="../index.html" class="btn--secondary">Go to Home</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+
+  </body>
+</html>

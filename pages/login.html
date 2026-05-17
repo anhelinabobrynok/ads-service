@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdBoard — login to your announcements account">
+    <meta name="author" content="Student Lab 1">
+    <title>Login — AdBoard</title>
+    <!-- Main stylesheet compiled from SCSS -->
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body>
+
+    <!-- Login page: full-screen centered auth form -->
+    <main class="auth-page">
+
+      <!-- Auth card container -->
+      <div class="auth-card">
+
+        <!-- Branding -->
+        <div class="auth-card__logo">
+          <h1 class="auth-card__title">Ad<span>Board</span></h1>
+          <p class="auth-card__subtitle">Announcements for your community</p>
+        </div>
+
+        <!-- Error notification (shown on failed login) -->
+        <div class="alert--error" role="alert" aria-live="polite">
+          <span class="alert__icon" aria-hidden="true">✕</span>
+          <div class="alert__content">
+            <p class="alert__title">Login failed</p>
+            <p class="alert__message">Invalid username or password. Please try again.</p>
+          </div>
+          <button class="alert__close" aria-label="Close notification" type="button">✕</button>
+        </div>
+
+        <!-- Login form -->
+        <form action="#" method="post" novalidate>
+
+          <!-- Username field -->
+          <div class="form-group">
+            <label class="form-label" for="username">Username</label>
+            <input
+              class="form-input--error"
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
+              autocomplete="username"
+              aria-describedby="username-error"
+              value="john_doe"
+            >
+            <span class="form-error" id="username-error">Username is required</span>
+          </div>
+
+          <!-- Password field -->
+          <div class="form-group">
+            <label class="form-label" for="password">Password</label>
+            <input
+              class="form-input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+            >
+          </div>
+
+          <!-- Submit button -->
+          <a href="../index.html" class="btn--primary" style="width:100%; justify-content:center; margin-top:8px;">
+            Sign In
+          </a>
+
+        </form>
+
+        <!-- Footer link -->
+        <p class="auth-card__footer">
+          Don't have an account? <a href="#">Contact administrator</a>
+        </p>
+
+      </div>
+      <!-- end .auth-card -->
+
+    </main>
+
+  </body>
+</html>

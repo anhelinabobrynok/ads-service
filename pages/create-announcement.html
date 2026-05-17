@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdBoard — create a new announcement">
+    <meta name="author" content="Student Lab 1">
+    <title>Create Announcement — AdBoard</title>
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body>
+
+    <div class="app-shell">
+
+      <!-- Header -->
+      <header class="site-header" role="banner">
+        <a href="../index.html" class="site-header__logo">Ad<span>Board</span></a>
+        <div class="site-header__actions">
+          <div class="site-header__location">📍 Lviv, UA</div>
+          <div class="site-header__user">
+            <div class="site-header__avatar" aria-hidden="true">JD</div>
+            <span>john_doe</span>
+          </div>
+          <a href="login.html" class="btn--secondary">Logout</a>
+          <button class="site-header__menu-toggle" aria-label="Toggle navigation" type="button">☰</button>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" role="navigation" aria-label="Main navigation">
+        <p class="sidebar__section-label">Browse</p>
+        <a href="../index.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📋</span>All Announcements
+        </a>
+        <p class="sidebar__section-label">My Content</p>
+        <a href="my-announcements.html" class="sidebar__nav-link--active" aria-current="page">
+          <span class="sidebar__nav-icon" aria-hidden="true">✏️</span>My Announcements
+        </a>
+      </nav>
+
+      <!-- Main content: create announcement form -->
+      <main class="main-content" role="main">
+
+        <a href="../index.html" class="announcement-detail__back">← Back to Announcements</a>
+
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">New <span>Announcement</span></h1>
+          </div>
+        </header>
+
+        <div class="announcement-detail" style="max-width:700px;">
+
+          <form action="#" method="post" novalidate>
+
+            <!-- Title -->
+            <div class="form-group">
+              <label class="form-label" for="ann-title">Title</label>
+              <input
+                class="form-input"
+                type="text"
+                id="ann-title"
+                name="title"
+                placeholder="Brief and descriptive title"
+                maxlength="200"
+                required
+              >
+            </div>
+
+            <!-- Body text -->
+            <div class="form-group">
+              <label class="form-label" for="ann-body">Description</label>
+              <textarea
+                class="form-textarea"
+                id="ann-body"
+                name="body"
+                placeholder="Describe your announcement in detail…"
+                rows="6"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Visibility type: public or local -->
+            <div class="form-group">
+              <label class="form-label" for="ann-visibility">Visibility</label>
+              <select class="form-select" id="ann-visibility" name="visibility" required>
+                <option value="">Choose visibility…</option>
+                <option value="public">🌐 Public — visible to everyone, including guests</option>
+                <option value="local">📍 Local — visible only to users in my city (Lviv)</option>
+              </select>
+              <span class="form-hint">
+                Local announcements are shown only to registered users in the same city.
+              </span>
+            </div>
+
+            <!-- Category -->
+            <div class="form-group">
+              <label class="form-label" for="ann-category">Category</label>
+              <select class="form-select" id="ann-category" name="category">
+                <option value="">Select category…</option>
+                <option value="housing">🏠 Housing</option>
+                <option value="electronics">💻 Electronics</option>
+                <option value="jobs">💼 Jobs</option>
+                <option value="events">🎉 Events</option>
+                <option value="pets">🐾 Pets</option>
+                <option value="other">📦 Other</option>
+              </select>
+            </div>
+
+            <!-- Contact info -->
+            <div class="form-group">
+              <label class="form-label" for="ann-contact">Contact Info (optional)</label>
+              <input
+                class="form-input"
+                type="text"
+                id="ann-contact"
+                name="contact"
+                placeholder="Phone number, email, or Telegram username"
+              >
+            </div>
+
+            <!-- Validation error example -->
+            <div class="alert--error" role="alert">
+              <span class="alert__icon" aria-hidden="true">⚠</span>
+              <div class="alert__content">
+                <p class="alert__title">Validation error</p>
+                <p class="alert__message">Title must be at least 10 characters long.</p>
+              </div>
+            </div>
+
+            <!-- Form actions -->
+            <div style="display:flex; gap:12px; margin-top:8px;">
+              <a href="../index.html" class="btn--secondary">Cancel</a>
+              <button class="btn--primary" type="submit">Publish Announcement</button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </body>
+</html>

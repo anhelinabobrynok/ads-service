@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdBoard — manage users (admin only)">
+    <meta name="author" content="Student Lab 1">
+    <title>Manage Users — AdBoard</title>
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body>
+
+    <div class="app-shell">
+
+      <!-- Header -->
+      <header class="site-header" role="banner">
+        <a href="../index.html" class="site-header__logo">Ad<span>Board</span></a>
+        <div class="site-header__actions">
+          <div class="site-header__location">📍 Lviv, UA</div>
+          <div class="site-header__user">
+            <div class="site-header__avatar" aria-hidden="true">AD</div>
+            <span>admin</span>
+            <span class="badge-admin">Admin</span>
+          </div>
+          <a href="login.html" class="btn--secondary">Logout</a>
+          <button class="site-header__menu-toggle" aria-label="Toggle navigation" type="button">☰</button>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" role="navigation" aria-label="Main navigation">
+        <p class="sidebar__section-label">Browse</p>
+        <a href="../index.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📋</span>All Announcements
+          <span class="sidebar__count">42</span>
+        </a>
+        <a href="public.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">🌐</span>Public
+          <span class="sidebar__count">28</span>
+        </a>
+        <a href="local.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📍</span>Local (Lviv)
+          <span class="sidebar__count">14</span>
+        </a>
+        <p class="sidebar__section-label">My Content</p>
+        <a href="my-announcements.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">✏️</span>My Announcements
+          <span class="sidebar__count">5</span>
+        </a>
+        <p class="sidebar__section-label">Administration</p>
+        <a href="users.html" class="sidebar__nav-link--active" aria-current="page">
+          <span class="sidebar__nav-icon" aria-hidden="true">👥</span>Manage Users
+        </a>
+      </nav>
+
+      <!-- Main content -->
+      <main class="main-content" role="main">
+
+        <!-- Page header -->
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">Manage <span>Users</span></h1>
+            <p class="page-header__subtitle">8 registered users</p>
+          </div>
+          <div class="page-header__actions">
+            <!-- Trigger for create user dialog -->
+            <a href="create-user.html" class="btn--primary">+ Create User</a>
+          </div>
+        </header>
+
+        <!-- Filter bar -->
+        <div class="filter-bar">
+          <input
+            class="filter-bar__search"
+            type="search"
+            placeholder="Search users…"
+            aria-label="Search users"
+          >
+          <select class="filter-bar__select" aria-label="Filter by role">
+            <option value="">All roles</option>
+            <option value="admin">Admin</option>
+            <option value="regular">Regular user</option>
+          </select>
+        </div>
+
+        <!-- Users table -->
+        <div class="users-table-wrapper">
+          <table class="users-table" aria-label="User list">
+            <thead>
+              <tr>
+                <th scope="col">User</th>
+                <th scope="col">Role</th>
+                <th scope="col">Location</th>
+                <th scope="col">Posts</th>
+                <th scope="col">Joined</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- Admin user row -->
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-cell__avatar" aria-hidden="true">AD</div>
+                    <div>
+                      <p class="user-cell__name">admin</p>
+                      <p class="user-cell__email">admin@adboard.io</p>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge-admin">Admin</span></td>
+                <td>Lviv, UA</td>
+                <td>—</td>
+                <td><time datetime="2024-01-01">Jan 1, 2024</time></td>
+                <td>
+                  <div class="table-actions">
+                    <a href="user-info.html" class="btn--icon" title="View user">👁</a>
+                    <a href="edit-user.html" class="btn--icon" title="Edit user">✏️</a>
+                    <a href="delete-user.html" class="btn--icon" title="Delete user">🗑</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Regular user rows -->
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-cell__avatar" aria-hidden="true">JD</div>
+                    <div>
+                      <p class="user-cell__name">john_doe</p>
+                      <p class="user-cell__email">john@example.com</p>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge-user">Regular</span></td>
+                <td>Lviv, UA</td>
+                <td>5</td>
+                <td><time datetime="2024-02-14">Feb 14, 2024</time></td>
+                <td>
+                  <div class="table-actions">
+                    <a href="user-info.html" class="btn--icon" title="View user">👁</a>
+                    <a href="edit-user.html" class="btn--icon" title="Edit user">✏️</a>
+                    <a href="delete-user.html" class="btn--icon" title="Delete user">🗑</a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-cell__avatar" aria-hidden="true">MK</div>
+                    <div>
+                      <p class="user-cell__name">m_kovalenko</p>
+                      <p class="user-cell__email">maria.k@example.com</p>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge-user">Regular</span></td>
+                <td>Lviv, UA</td>
+                <td>3</td>
+                <td><time datetime="2024-03-05">Mar 5, 2024</time></td>
+                <td>
+                  <div class="table-actions">
+                    <a href="user-info.html" class="btn--icon" title="View user">👁</a>
+                    <a href="edit-user.html" class="btn--icon" title="Edit user">✏️</a>
+                    <a href="delete-user.html" class="btn--icon" title="Delete user">🗑</a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-cell__avatar" aria-hidden="true">SA</div>
+                    <div>
+                      <p class="user-cell__name">s_andriy</p>
+                      <p class="user-cell__email">s.andriy@example.com</p>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge-user">Regular</span></td>
+                <td>Kyiv, UA</td>
+                <td>7</td>
+                <td><time datetime="2024-03-20">Mar 20, 2024</time></td>
+                <td>
+                  <div class="table-actions">
+                    <a href="user-info.html" class="btn--icon" title="View user">👁</a>
+                    <a href="edit-user.html" class="btn--icon" title="Edit user">✏️</a>
+                    <a href="delete-user.html" class="btn--icon" title="Delete user">🗑</a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-cell__avatar" aria-hidden="true">VR</div>
+                    <div>
+                      <p class="user-cell__name">v_roman</p>
+                      <p class="user-cell__email">v.roman@example.com</p>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge-admin">Admin</span></td>
+                <td>Odesa, UA</td>
+                <td>2</td>
+                <td><time datetime="2024-04-01">Apr 1, 2024</time></td>
+                <td>
+                  <div class="table-actions">
+                    <a href="user-info.html" class="btn--icon" title="View user">👁</a>
+                    <a href="edit-user.html" class="btn--icon" title="Edit user">✏️</a>
+                    <a href="delete-user.html" class="btn--icon" title="Delete user">🗑</a>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <!-- end users-table-wrapper -->
+
+      </main>
+
+    </div>
+    <!-- end .app-shell -->
+
+    <!-- ===================================================== -->
+    <!-- Create User Dialog (modal overlay)                    -->
+    <!-- ===================================================== -->
+    <div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-create-title">
+
+      <div class="modal">
+
+        <header class="modal__header">
+          <h2 class="modal__title" id="modal-create-title">Create User</h2>
+          <a href="users.html" class="btn--icon" aria-label="Close dialog">✕</a>
+        </header>
+
+        <div class="modal__body">
+
+          <!-- Validation error summary -->
+          <div class="alert--error" role="alert">
+            <span class="alert__icon" aria-hidden="true">⚠</span>
+            <div class="alert__content">
+              <p class="alert__title">Please fix the errors below</p>
+              <p class="alert__message">Username already exists and passwords do not match.</p>
+            </div>
+          </div>
+
+          <!-- Create user form -->
+          <form action="#" method="post" novalidate>
+
+            <!-- Username -->
+            <div class="form-group">
+              <label class="form-label" for="new-username">Username</label>
+              <input
+                class="form-input--error"
+                type="text"
+                id="new-username"
+                name="username"
+                placeholder="e.g. jane_doe"
+                autocomplete="off"
+                aria-describedby="new-username-error"
+              >
+              <span class="form-error" id="new-username-error">Username already taken</span>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <label class="form-label" for="new-password">Password</label>
+              <input
+                class="form-input"
+                type="password"
+                id="new-password"
+                name="password"
+                placeholder="Min 8 characters"
+                autocomplete="new-password"
+              >
+              <span class="form-hint">Must be at least 8 characters.</span>
+            </div>
+
+            <!-- Confirm password -->
+            <div class="form-group">
+              <label class="form-label" for="confirm-password">Confirm Password</label>
+              <input
+                class="form-input--error"
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                placeholder="Repeat password"
+                autocomplete="new-password"
+                aria-describedby="confirm-password-error"
+              >
+              <span class="form-error" id="confirm-password-error">Passwords do not match</span>
+            </div>
+
+            <!-- Role -->
+            <div class="form-group">
+              <label class="form-label" for="new-role">Role</label>
+              <select class="form-select" id="new-role" name="role">
+                <option value="">Select role…</option>
+                <option value="regular" selected>Regular User</option>
+                <option value="admin">Administrator</option>
+              </select>
+            </div>
+
+            <!-- Location -->
+            <div class="form-group">
+              <label class="form-label" for="new-location">Location (city)</label>
+              <input
+                class="form-input"
+                type="text"
+                id="new-location"
+                name="location"
+                placeholder="e.g. Lviv"
+              >
+              <span class="form-hint">Used to show local announcements.</span>
+            </div>
+
+          </form>
+
+        </div>
+
+        <footer class="modal__footer">
+          <a href="users.html" class="btn--secondary">Cancel</a>
+          <a href="users.html" class="btn--primary">Create User</a>
+        </footer>
+
+      </div>
+      <!-- end .modal -->
+
+    </div>
+    <!-- end modal overlay -->
+
+  </body>
+</html>

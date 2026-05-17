@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdBoard — browse public and local announcements">
+    <meta name="author" content="Student Lab 1">
+    <title>Browse Announcements — AdBoard</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+
+    <!-- ===================================================== -->
+    <!-- App shell: header + sidebar + main (CSS grid layout)  -->
+    <!-- ===================================================== -->
+    <div class="app-shell">
+
+      <!-- Site header -->
+      <header class="site-header" role="banner">
+
+        <!-- Logo / brand -->
+        <a href="index.html" class="site-header__logo" aria-label="AdBoard home">
+          Ad<span>Board</span>
+        </a>
+
+        <!-- Header right side: location, user, logout -->
+        <div class="site-header__actions">
+
+          <!-- Current location indicator -->
+          <div class="site-header__location" aria-label="Your current location">
+            📍 Lviv, UA
+          </div>
+
+          <!-- Logged-in user info -->
+          <div class="site-header__user">
+            <div class="site-header__avatar" aria-hidden="true">JD</div>
+            <span>john_doe</span>
+          </div>
+
+          <!-- Logout button -->
+          <a href="pages/login.html" class="btn--secondary" aria-label="Log out">Logout</a>
+
+          <!-- Mobile menu toggle -->
+          <button class="site-header__menu-toggle" aria-label="Toggle navigation menu" type="button">
+            ☰
+          </button>
+
+        </div>
+      </header>
+      <!-- end header -->
+
+      <!-- Sidebar navigation -->
+      <nav class="sidebar" role="navigation" aria-label="Main navigation">
+
+        <!-- Browse section -->
+        <p class="sidebar__section-label">Browse</p>
+
+        <a href="index.html" class="sidebar__nav-link--active" aria-current="page">
+          <span class="sidebar__nav-icon" aria-hidden="true">📋</span>
+          All Announcements
+          <span class="sidebar__count">42</span>
+        </a>
+
+        <a href="pages/public.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">🌐</span>
+          Public
+          <span class="sidebar__count">28</span>
+        </a>
+
+        <a href="pages/local.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📍</span>
+          Local (Lviv)
+          <span class="sidebar__count">14</span>
+        </a>
+
+        <!-- My content section -->
+        <p class="sidebar__section-label">My Content</p>
+
+        <a href="pages/my-announcements.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">✏️</span>
+          My Announcements
+          <span class="sidebar__count">5</span>
+        </a>
+
+        <!-- Admin section (visible to admins only) -->
+        <p class="sidebar__section-label">Administration</p>
+
+        <a href="pages/users.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">👥</span>
+          Manage Users
+        </a>
+
+      </nav>
+      <!-- end sidebar -->
+
+      <!-- Main content area -->
+      <main class="main-content" role="main">
+
+        <!-- Page heading + create button -->
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">All <span>Announcements</span></h1>
+            <p class="page-header__subtitle">42 total · 14 in your area</p>
+          </div>
+          <div class="page-header__actions">
+            <a href="pages/create-announcement.html" class="btn--primary">+ New Announcement</a>
+          </div>
+        </header>
+
+        <!-- Success notification after creating an announcement -->
+        <div class="alert--success" role="status" aria-live="polite">
+          <span class="alert__icon" aria-hidden="true">✓</span>
+          <div class="alert__content">
+            <p class="alert__title">Announcement created</p>
+            <p class="alert__message">Your announcement has been published successfully.</p>
+          </div>
+          <button class="alert__close" aria-label="Close notification" type="button">✕</button>
+        </div>
+
+        <!-- Filter and search bar -->
+        <div class="filter-bar" role="search">
+          <input
+            class="filter-bar__search"
+            type="search"
+            placeholder="Search announcements…"
+            aria-label="Search announcements"
+          >
+          <select class="filter-bar__select" aria-label="Filter by visibility">
+            <option value="">All types</option>
+            <option value="public">🌐 Public</option>
+            <option value="local">📍 Local only</option>
+          </select>
+          <select class="filter-bar__select" aria-label="Sort by">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </div>
+
+        <!-- Tabs: switch between views -->
+        <nav class="tabs" aria-label="Announcement filters">
+          <a href="#" class="tab--active" aria-current="true">All (42)</a>
+          <a href="pages/public.html" class="tab">🌐 Public (28)</a>
+          <a href="pages/local.html" class="tab">📍 Local (14)</a>
+        </nav>
+
+        <!-- Announcements grid -->
+        <section aria-label="Announcements list">
+          <div class="announcement-grid">
+
+            <!-- Announcement card: public -->
+            <article class="announcement-card--public">
+              <header class="announcement-card__header">
+                <div class="announcement-card__badges">
+                  <span class="badge-public">Public</span>
+                </div>
+                <!-- Context menu -->
+                <div class="dropdown" aria-label="Announcement options">
+                  <button class="btn--icon" aria-label="Open announcement options" type="button">⋯</button>
+                  <div class="dropdown__menu" role="menu">
+                    <a href="pages/announcement-detail.html" class="dropdown__item" role="menuitem">👁 View</a>
+                    <a href="pages/edit-announcement.html" class="dropdown__item" role="menuitem">✏️ Edit</a>
+                    <div class="dropdown__divider" role="separator"></div>
+                    <a href="pages/delete-confirm.html" class="dropdown__item--danger" role="menuitem">🗑 Delete</a>
+                  </div>
+                </div>
+              </header>
+
+              <a href="pages/announcement-detail.html">
+                <h2 class="announcement-card__title">Apartment for rent in the city center — 2 rooms, fully furnished</h2>
+              </a>
+              <p class="announcement-card__body">
+                Spacious 2-bedroom apartment available from June 1st. Includes all furniture,
+                high-speed internet, and parking. Perfect for a small family or professionals.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">JD</div>
+                  <span>john_doe</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-05-10">May 10, 2024</time>
+              </footer>
+            </article>
+
+            <!-- Announcement card: local -->
+            <article class="announcement-card--local">
+              <header class="announcement-card__header">
+                <div class="announcement-card__badges">
+                  <span class="badge-local">Local · Lviv</span>
+                </div>
+                <div class="dropdown">
+                  <button class="btn--icon" aria-label="Open announcement options" type="button">⋯</button>
+                </div>
+              </header>
+
+              <a href="pages/announcement-detail.html">
+                <h2 class="announcement-card__title">Lost cat — grey tabby, answers to "Smoke"</h2>
+              </a>
+              <p class="announcement-card__body">
+                Last seen near Svobody Avenue on Sunday evening. If found please contact Maria at
+                the number below. Reward offered.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">MK</div>
+                  <span>m_kovalenko</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-05-12">May 12, 2024</time>
+              </footer>
+            </article>
+
+            <!-- Announcement card: public -->
+            <article class="announcement-card--public">
+              <header class="announcement-card__header">
+                <div class="announcement-card__badges">
+                  <span class="badge-public">Public</span>
+                </div>
+                <div class="dropdown">
+                  <button class="btn--icon" aria-label="Open announcement options" type="button">⋯</button>
+                </div>
+              </header>
+              <a href="pages/announcement-detail.html">
+                <h2 class="announcement-card__title">Selling MacBook Pro M3 — excellent condition, 14"</h2>
+              </a>
+              <p class="announcement-card__body">
+                16 GB RAM, 512 GB SSD. Purchased 6 months ago. Includes original charger and box.
+                Price negotiable. Serious buyers only.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">SA</div>
+                  <span>s_andriy</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-05-08">May 8, 2024</time>
+              </footer>
+            </article>
+
+            <!-- Announcement card: local -->
+            <article class="announcement-card--local">
+              <header class="announcement-card__header">
+                <div class="announcement-card__badges">
+                  <span class="badge-local">Local · Lviv</span>
+                </div>
+                <div class="dropdown">
+                  <button class="btn--icon" aria-label="Open announcement options" type="button">⋯</button>
+                </div>
+              </header>
+              <a href="pages/announcement-detail.html">
+                <h2 class="announcement-card__title">Community clean-up event — Stryiskyi Park, Saturday</h2>
+              </h2>
+              <p class="announcement-card__body">
+                Join your neighbours for a morning clean-up of Stryiskyi Park. Gloves and bags
+                provided. Coffee and sandwiches after. All ages welcome!
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">OP</div>
+                  <span>o_petryk</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-05-14">May 14, 2024</time>
+              </footer>
+            </article>
+
+            <!-- Announcement card: public -->
+            <article class="announcement-card--public">
+              <header class="announcement-card__header">
+                <div class="announcement-card__badges">
+                  <span class="badge-public">Public</span>
+                </div>
+                <div class="dropdown">
+                  <button class="btn--icon" aria-label="Open announcement options" type="button">⋯</button>
+                </div>
+              </header>
+              <a href="pages/announcement-detail.html">
+                <h2 class="announcement-card__title">Looking for a co-founder for EdTech startup</h2>
+              </a>
+              <p class="announcement-card__body">
+                Building an online tutoring platform. Looking for a technical co-founder with React
+                and Node.js experience. Equity offered.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">VR</div>
+                  <span>v_roman</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-05-06">May 6, 2024</time>
+              </footer>
+            </article>
+
+            <!-- Announcement card: local -->
+            <article class="announcement-card--local">
+              <header class="announcement-card__header">
+                <div class="announcement-card__badges">
+                  <span class="badge-local">Local · Lviv</span>
+                </div>
+                <div class="dropdown">
+                  <button class="btn--icon" aria-label="Open announcement options" type="button">⋯</button>
+                </div>
+              </header>
+              <a href="pages/announcement-detail.html">
+                <h2 class="announcement-card__title">Free yoga classes every Tuesday morning — Rynok Square</h2>
+              </a>
+              <p class="announcement-card__body">
+                Open-air yoga for all levels. Bring your own mat. Starts at 7:30 AM. Run by
+                certified instructor Olha. No registration needed.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">OH</div>
+                  <span>o_halenko</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-05-13">May 13, 2024</time>
+              </footer>
+            </article>
+
+          </div>
+          <!-- end .announcement-grid -->
+        </section>
+
+      </main>
+      <!-- end main -->
+
+    </div>
+    <!-- end .app-shell -->
+
+  </body>
+</html>

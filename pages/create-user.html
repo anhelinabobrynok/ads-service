@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdBoard — create a new user account (admin)">
+    <meta name="author" content="Student Lab 1">
+    <title>Create User — AdBoard</title>
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body>
+
+    <div class="app-shell">
+
+      <!-- Header -->
+      <header class="site-header" role="banner">
+        <a href="../index.html" class="site-header__logo">Ad<span>Board</span></a>
+        <div class="site-header__actions">
+          <div class="site-header__location">📍 Lviv, UA</div>
+          <div class="site-header__user">
+            <div class="site-header__avatar" aria-hidden="true">AD</div>
+            <span>admin</span>
+            <span class="badge-admin">Admin</span>
+          </div>
+          <a href="login.html" class="btn--secondary">Logout</a>
+          <button class="site-header__menu-toggle" aria-label="Toggle navigation" type="button">☰</button>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" role="navigation" aria-label="Main navigation">
+        <p class="sidebar__section-label">Browse</p>
+        <a href="../index.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📋</span>All Announcements
+        </a>
+        <p class="sidebar__section-label">Administration</p>
+        <a href="users.html" class="sidebar__nav-link--active" aria-current="page">
+          <span class="sidebar__nav-icon" aria-hidden="true">👥</span>Manage Users
+        </a>
+      </nav>
+
+      <!-- Main content -->
+      <main class="main-content" role="main">
+
+        <a href="users.html" class="announcement-detail__back">← Back to Users</a>
+
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">Create <span>User</span></h1>
+            <p class="page-header__subtitle">Add a new user to the platform</p>
+          </div>
+        </header>
+
+        <div class="announcement-detail" style="max-width:520px;">
+
+          <!-- Validation error summary (shown when form is submitted with errors) -->
+          <div class="alert--error" role="alert" aria-live="polite">
+            <span class="alert__icon" aria-hidden="true">⚠</span>
+            <div class="alert__content">
+              <p class="alert__title">Please fix the errors below</p>
+              <p class="alert__message">Username already exists and passwords do not match.</p>
+            </div>
+            <button class="alert__close" aria-label="Close alert" type="button">✕</button>
+          </div>
+
+          <!-- Create user form -->
+          <form action="#" method="post" novalidate>
+
+            <!-- Username field -->
+            <div class="form-group">
+              <label class="form-label" for="create-username">Username</label>
+              <input
+                class="form-input--error"
+                type="text"
+                id="create-username"
+                name="username"
+                placeholder="e.g. jane_doe"
+                autocomplete="off"
+                aria-describedby="create-username-error"
+                value="jane_doe"
+              >
+              <span class="form-error" id="create-username-error">Username "jane_doe" is already taken</span>
+            </div>
+
+            <!-- Password field -->
+            <div class="form-group">
+              <label class="form-label" for="create-password">Password</label>
+              <input
+                class="form-input"
+                type="password"
+                id="create-password"
+                name="password"
+                placeholder="Min 8 characters"
+                autocomplete="new-password"
+              >
+              <span class="form-hint">Must contain at least 8 characters.</span>
+            </div>
+
+            <!-- Confirm password field -->
+            <div class="form-group">
+              <label class="form-label" for="create-confirm-password">Confirm Password</label>
+              <input
+                class="form-input--error"
+                type="password"
+                id="create-confirm-password"
+                name="confirm-password"
+                placeholder="Repeat password"
+                autocomplete="new-password"
+                aria-describedby="create-confirm-error"
+              >
+              <span class="form-error" id="create-confirm-error">Passwords do not match</span>
+            </div>
+
+            <!-- Role selection -->
+            <div class="form-group">
+              <label class="form-label" for="create-role">Role</label>
+              <select class="form-select" id="create-role" name="role">
+                <option value="">Select role…</option>
+                <option value="regular" selected>Regular User</option>
+                <option value="admin">Administrator</option>
+              </select>
+              <span class="form-hint">
+                Administrators can manage all users and all announcements.
+              </span>
+            </div>
+
+            <!-- Location field -->
+            <div class="form-group">
+              <label class="form-label" for="create-location">Location (city)</label>
+              <input
+                class="form-input"
+                type="text"
+                id="create-location"
+                name="location"
+                placeholder="e.g. Lviv"
+              >
+              <span class="form-hint">
+                Determines which local announcements the user can see and post.
+              </span>
+            </div>
+
+            <!-- Email field -->
+            <div class="form-group">
+              <label class="form-label" for="create-email">Email (optional)</label>
+              <input
+                class="form-input"
+                type="email"
+                id="create-email"
+                name="email"
+                placeholder="user@example.com"
+                autocomplete="email"
+              >
+            </div>
+
+            <!-- Form action buttons -->
+            <div style="display:flex; gap:12px; margin-top:8px;">
+              <a href="users.html" class="btn--secondary">Cancel</a>
+              <button class="btn--primary" type="submit">Create User</button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </body>
+</html>

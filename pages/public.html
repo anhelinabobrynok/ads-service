@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdBoard — public announcements visible to everyone">
+    <meta name="author" content="Student Lab 1">
+    <title>Public Announcements — AdBoard</title>
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body>
+
+    <div class="app-shell">
+
+      <!-- Header -->
+      <header class="site-header" role="banner">
+        <a href="../index.html" class="site-header__logo">Ad<span>Board</span></a>
+        <div class="site-header__actions">
+          <div class="site-header__location">📍 Lviv, UA</div>
+          <div class="site-header__user">
+            <div class="site-header__avatar" aria-hidden="true">JD</div>
+            <span>john_doe</span>
+          </div>
+          <a href="login.html" class="btn--secondary">Logout</a>
+          <button class="site-header__menu-toggle" aria-label="Toggle navigation" type="button">☰</button>
+        </div>
+      </header>
+
+      <!-- Sidebar navigation -->
+      <nav class="sidebar" role="navigation" aria-label="Main navigation">
+        <p class="sidebar__section-label">Browse</p>
+        <a href="../index.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📋</span>All Announcements
+          <span class="sidebar__count">42</span>
+        </a>
+        <a href="public.html" class="sidebar__nav-link--active" aria-current="page">
+          <span class="sidebar__nav-icon" aria-hidden="true">🌐</span>Public
+          <span class="sidebar__count">28</span>
+        </a>
+        <a href="local.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📍</span>Local (Lviv)
+          <span class="sidebar__count">14</span>
+        </a>
+        <p class="sidebar__section-label">My Content</p>
+        <a href="my-announcements.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">✏️</span>My Announcements
+          <span class="sidebar__count">5</span>
+        </a>
+        <p class="sidebar__section-label">Administration</p>
+        <a href="users.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">👥</span>Manage Users
+        </a>
+      </nav>
+
+      <!-- Main content -->
+      <main class="main-content" role="main">
+
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">🌐 <span>Public</span> Announcements</h1>
+            <p class="page-header__subtitle">28 announcements — visible to everyone, including visitors</p>
+          </div>
+          <div class="page-header__actions">
+            <a href="create-announcement.html" class="btn--primary">+ New Announcement</a>
+          </div>
+        </header>
+
+        <!-- Info banner explaining public visibility -->
+        <div class="announcement-detail__level-section" style="margin-bottom:24px;">
+          <span class="announcement-detail__level-icon" aria-hidden="true">🌐</span>
+          <div class="announcement-detail__level-text">
+            <strong>Public announcements</strong>
+            These are visible to all visitors — both registered users and guests who are not logged in.
+            Anyone with a link can see them.
+          </div>
+        </div>
+
+        <!-- Filter bar -->
+        <div class="filter-bar" role="search">
+          <input
+            class="filter-bar__search"
+            type="search"
+            placeholder="Search public announcements…"
+            aria-label="Search public announcements"
+          >
+          <select class="filter-bar__select" aria-label="Filter by category">
+            <option value="">All categories</option>
+            <option value="housing">🏠 Housing</option>
+            <option value="electronics">💻 Electronics</option>
+            <option value="jobs">💼 Jobs</option>
+            <option value="events">🎉 Events</option>
+            <option value="pets">🐾 Pets</option>
+            <option value="other">📦 Other</option>
+          </select>
+          <select class="filter-bar__select" aria-label="Sort by">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </div>
+
+        <!-- Tabs -->
+        <nav class="tabs" aria-label="Announcement filters">
+          <a href="../index.html" class="tab">All (42)</a>
+          <a href="public.html" class="tab--active" aria-current="true">🌐 Public (28)</a>
+          <a href="local.html" class="tab">📍 Local (14)</a>
+        </nav>
+
+        <!-- Public announcements grid -->
+        <section aria-label="Public announcements list">
+          <div class="announcement-grid">
+
+            <!-- Card 1 -->
+            <article class="announcement-card--public">
+              <header class="announcement-card__header">
+                <div class="announcement-card__badges">
+                  <span class="badge-public">Public</span>
+                  <span class="badge-user">Housing</span>
+                </div>
+                <div class="dropdown">
+                  <button class="btn--icon" aria-label="Announcement options" type="button">⋯</button>
+                  <div class="dropdown__menu" role="menu">
+                    <a href="announcement-detail.html" class="dropdown__item" role="menuitem">👁 View</a>
+                    <a href="edit-announcement.html" class="dropdown__item" role="menuitem">✏️ Edit</a>
+                    <div class="dropdown__divider" role="separator"></div>
+                    <a href="delete-confirm.html" class="dropdown__item--danger" role="menuitem">🗑 Delete</a>
+                  </div>
+                </div>
+              </header>
+              <a href="announcement-detail.html">
+                <h2 class="announcement-card__title">Apartment for rent in the city center — 2 rooms, fully furnished</h2>
+              </a>
+              <p class="announcement-card__body">
+                Spacious 2-bedroom apartment available from June 1st. Includes all furniture, high-speed internet, and parking.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">JD</div>
+                  <span>john_doe</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-05-10">May 10, 2024</time>
+              </footer>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="announcement-card--public">
+              <header class="announcement-card__header">
+                <div class="announcement-card__badges">
+                  <span class="badge-public">Public</span>
+                  <span class="badge-user">Electronics</span>
+                </div>
+                <div class="dropdown">
+                  <button class="btn--icon" aria-label="Announcement options" type="button">⋯</button>
+                </div>
+              </header>
+              <a href="announcement-detail.html">
+                <h2 class="announcement-card__title">Selling MacBook Pro M3 — excellent condition, 14"</h2>
+              </a>
+              <p class="announcement-card__body">
+                16 GB RAM, 512 GB SSD. Purchased 6 months ago. Includes original charger and box. Price negotiable.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">SA</div>
+                  <span>s_andriy</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-05-08">May 8, 2024</time>
+              </footer>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="announcement-card--public">
+              <header class="announcement-card__header">
+                <div class="announcement-card__badges">
+                  <span class="badge-public">Public</span>
+                  <span class="badge-user">Jobs</span>
+                </div>
+                <div class="dropdown">
+                  <button class="btn--icon" aria-label="Announcement options" type="button">⋯</button>
+                </div>
+              </header>
+              <a href="announcement-detail.html">
+                <h2 class="announcement-card__title">Looking for a co-founder for EdTech startup</h2>
+              </a>
+              <p class="announcement-card__body">
+                Building an online tutoring platform. Looking for a technical co-founder with React and Node.js experience. Equity offered.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">VR</div>
+                  <span>v_roman</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-05-06">May 6, 2024</time>
+              </footer>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="announcement-card--public">
+              <header class="announcement-card__header">
+                <div class="announcement-card__badges">
+                  <span class="badge-public">Public</span>
+                  <span class="badge-user">Jobs</span>
+                </div>
+                <div class="dropdown">
+                  <button class="btn--icon" aria-label="Announcement options" type="button">⋯</button>
+                </div>
+              </header>
+              <a href="announcement-detail.html">
+                <h2 class="announcement-card__title">Looking for a senior React developer — remote, full-time</h2>
+              </a>
+              <p class="announcement-card__body">
+                Competitive salary, full remote, flexible hours. Must have 3+ years React experience and strong TypeScript skills.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">JD</div>
+                  <span>john_doe</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-04-28">Apr 28, 2024</time>
+              </footer>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="announcement-card--public">
+              <header class="announcement-card__header">
+                <div class="announcement-card__badges">
+                  <span class="badge-public">Public</span>
+                  <span class="badge-user">Other</span>
+                </div>
+                <div class="dropdown">
+                  <button class="btn--icon" aria-label="Announcement options" type="button">⋯</button>
+                </div>
+              </header>
+              <a href="announcement-detail.html">
+                <h2 class="announcement-card__title">Selling Trek FX3 bicycle — 2022, barely used</h2>
+              </a>
+              <p class="announcement-card__body">
+                Size M, hydraulic disc brakes, Shimano gears. Ridden about 200 km. Selling due to relocation.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">JD</div>
+                  <span>john_doe</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-04-20">Apr 20, 2024</time>
+              </footer>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="announcement-card--public">
+              <header class="announcement-card__header">
+                <div class="announcement-card__badges">
+                  <span class="badge-public">Public</span>
+                  <span class="badge-user">Housing</span>
+                </div>
+                <div class="dropdown">
+                  <button class="btn--icon" aria-label="Announcement options" type="button">⋯</button>
+                </div>
+              </header>
+              <a href="announcement-detail.html">
+                <h2 class="announcement-card__title">Looking for a roommate — 3-bed flat near university, Kyiv</h2>
+              </a>
+              <p class="announcement-card__body">
+                One room available from July 1st. Modern flat, 5 min walk to metro. 7 500 UAH/month, utilities shared.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">OP</div>
+                  <span>o_petryk</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-04-15">Apr 15, 2024</time>
+              </footer>
+            </article>
+
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+
+  </body>
+</html>

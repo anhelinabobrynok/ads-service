@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdBoard — my announcements">
+    <meta name="author" content="Student Lab 1">
+    <title>My Announcements — AdBoard</title>
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body>
+
+    <div class="app-shell">
+
+      <!-- Header -->
+      <header class="site-header" role="banner">
+        <a href="../index.html" class="site-header__logo">Ad<span>Board</span></a>
+        <div class="site-header__actions">
+          <div class="site-header__location">📍 Lviv, UA</div>
+          <div class="site-header__user">
+            <div class="site-header__avatar" aria-hidden="true">JD</div>
+            <span>john_doe</span>
+          </div>
+          <a href="login.html" class="btn--secondary">Logout</a>
+          <button class="site-header__menu-toggle" aria-label="Toggle navigation" type="button">☰</button>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" role="navigation" aria-label="Main navigation">
+        <p class="sidebar__section-label">Browse</p>
+        <a href="../index.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📋</span>All Announcements
+        </a>
+        <a href="public.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">🌐</span>Public
+        </a>
+        <a href="local.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📍</span>Local (Lviv)
+        </a>
+        <p class="sidebar__section-label">My Content</p>
+        <a href="my-announcements.html" class="sidebar__nav-link--active" aria-current="page">
+          <span class="sidebar__nav-icon" aria-hidden="true">✏️</span>My Announcements
+        </a>
+      </nav>
+
+      <!-- Main content -->
+      <main class="main-content" role="main">
+
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">My <span>Announcements</span></h1>
+            <p class="page-header__subtitle">5 announcements posted by you</p>
+          </div>
+          <div class="page-header__actions">
+            <a href="create-announcement.html" class="btn--primary">+ New</a>
+          </div>
+        </header>
+
+        <!-- My announcements list -->
+        <section class="my-list" aria-label="My announcements">
+
+          <!-- Item 1 -->
+          <div class="my-list__item">
+            <div class="my-list__info">
+              <div style="display:flex; gap:8px; margin-bottom:4px;">
+                <span class="badge-public">Public</span>
+              </div>
+              <p class="my-list__title">Apartment for rent in the city center — 2 rooms, fully furnished</p>
+              <p class="my-list__meta">
+                <time datetime="2024-05-10">May 10, 2024</time> · Housing
+              </p>
+            </div>
+            <div class="my-list__actions">
+              <a href="announcement-detail.html" class="btn--icon" title="View">👁</a>
+              <a href="edit-announcement.html" class="btn--icon" title="Edit">✏️</a>
+              <a href="delete-confirm.html" class="btn--icon" title="Delete">🗑</a>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="my-list__item">
+            <div class="my-list__info">
+              <div style="display:flex; gap:8px; margin-bottom:4px;">
+                <span class="badge-local">Local · Lviv</span>
+              </div>
+              <p class="my-list__title">Free guitar lessons for beginners — Saturdays, 10:00 AM</p>
+              <p class="my-list__meta">
+                <time datetime="2024-05-03">May 3, 2024</time> · Events
+              </p>
+            </div>
+            <div class="my-list__actions">
+              <a href="announcement-detail.html" class="btn--icon" title="View">👁</a>
+              <a href="edit-announcement.html" class="btn--icon" title="Edit">✏️</a>
+              <a href="delete-confirm.html" class="btn--icon" title="Delete">🗑</a>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="my-list__item">
+            <div class="my-list__info">
+              <div style="display:flex; gap:8px; margin-bottom:4px;">
+                <span class="badge-public">Public</span>
+              </div>
+              <p class="my-list__title">Looking for a senior React developer — remote, full-time</p>
+              <p class="my-list__meta">
+                <time datetime="2024-04-28">Apr 28, 2024</time> · Jobs
+              </p>
+            </div>
+            <div class="my-list__actions">
+              <a href="announcement-detail.html" class="btn--icon" title="View">👁</a>
+              <a href="edit-announcement.html" class="btn--icon" title="Edit">✏️</a>
+              <a href="delete-confirm.html" class="btn--icon" title="Delete">🗑</a>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="my-list__item">
+            <div class="my-list__info">
+              <div style="display:flex; gap:8px; margin-bottom:4px;">
+                <span class="badge-local">Local · Lviv</span>
+              </div>
+              <p class="my-list__title">Selling my bicycle — Trek FX3, 2022, barely used</p>
+              <p class="my-list__meta">
+                <time datetime="2024-04-20">Apr 20, 2024</time> · Other
+              </p>
+            </div>
+            <div class="my-list__actions">
+              <a href="announcement-detail.html" class="btn--icon" title="View">👁</a>
+              <a href="edit-announcement.html" class="btn--icon" title="Edit">✏️</a>
+              <a href="delete-confirm.html" class="btn--icon" title="Delete">🗑</a>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="my-list__item">
+            <div class="my-list__info">
+              <div style="display:flex; gap:8px; margin-bottom:4px;">
+                <span class="badge-public">Public</span>
+              </div>
+              <p class="my-list__title">Selling MacBook Pro M3 — excellent condition, 14"</p>
+              <p class="my-list__meta">
+                <time datetime="2024-04-10">Apr 10, 2024</time> · Electronics
+              </p>
+            </div>
+            <div class="my-list__actions">
+              <a href="announcement-detail.html" class="btn--icon" title="View">👁</a>
+              <a href="edit-announcement.html" class="btn--icon" title="Edit">✏️</a>
+              <a href="delete-confirm.html" class="btn--icon" title="Delete">🗑</a>
+            </div>
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </body>
+</html>

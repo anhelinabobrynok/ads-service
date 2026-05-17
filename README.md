@@ -43,34 +43,6 @@ scss/
 └── _pages.scss        ← announcement cards, detail, users table, stats, my-list, dropdown
 ```
 
-## Compile SCSS to CSS
-
-```bash
-# Install sass (Node.js required)
-npm install -g sass
-
-# Compile once
-sass scss/main.scss css/main.css
-
-# Watch mode (auto-recompile on save)
-sass --watch scss/main.scss css/main.css
-```
-
-## GitHub Pages
-
-1. Push this repository to GitHub
-2. Go to **Settings → Pages**
-3. Under **Source**, select branch `lab1` and folder `/ (root)`
-4. Click **Save**
-5. Your site will be available at `https://<username>.github.io/<repository>/`
-
-## Git Branch Strategy
-
-```
-development          ← main integration branch
-└── lab1             ← this lab's branch (merge via pull request when done)
-```
-
 ## Requirements Covered
 
 ### HTML

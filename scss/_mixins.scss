@@ -1,0 +1,120 @@
+// ============================================================
+// _mixins.scss — Reusable mixins
+// ============================================================
+
+@use 'variables' as *;
+
+// --- Responsive breakpoints ---
+@mixin respond-to($bp) {
+  @if $bp == sm {
+    @media (max-width: #{$bp-sm}) { @content; }
+  } @else if $bp == md {
+    @media (max-width: #{$bp-md}) { @content; }
+  } @else if $bp == lg {
+    @media (max-width: #{$bp-lg}) { @content; }
+  } @else if $bp == xl {
+    @media (max-width: #{$bp-xl}) { @content; }
+  }
+}
+
+// --- Flex shorthand ---
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// --- Card component ---
+@mixin card {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+}
+
+// --- Button base ---
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-sm;
+  padding: $space-sm $space-lg;
+  border: none;
+  border-radius: $radius-md;
+  font-family: $font-body;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background $transition-fast, transform $transition-fast, box-shadow $transition-fast;
+  text-decoration: none;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// --- Input base ---
+@mixin input-base {
+  width: 100%;
+  padding: $space-sm $space-md;
+  background: $color-bg;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  color: $color-text-primary;
+  font-family: $font-body;
+  font-size: 0.95rem;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+  outline: none;
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.15);
+  }
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+}
+
+// --- Badge ---
+@mixin badge($bg, $color: $color-bg) {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px $space-sm;
+  background: $bg;
+  color: $color;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+// --- Truncate text ---
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// --- Fade-in animation ---
+@mixin fade-in($delay: 0s) {
+  animation: fade-in 0.4s ease $delay both;
+}

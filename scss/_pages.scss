@@ -1,0 +1,518 @@
+// ============================================================
+// _pages.scss — Page-specific styles for announcements service
+// ============================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+/* ---- Announcement Card ---- */
+.announcement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: $space-lg;
+
+  @include respond-to(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.announcement-card {
+  @include card;
+
+  @include fade-in;
+
+  padding: $space-lg;
+  transition: border-color $transition-normal, transform $transition-normal, box-shadow $transition-normal;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $color-border-light;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Second item delay */
+  &:nth-child(2) { animation-delay: 0.05s; }
+  &:nth-child(3) { animation-delay: 0.1s; }
+  &:nth-child(4) { animation-delay: 0.15s; }
+  &:nth-child(5) { animation-delay: 0.2s; }
+  &:nth-child(6) { animation-delay: 0.25s; }
+
+  &--public {
+    @extend .announcement-card;
+
+    border-top: 2px solid $color-accent-public;
+  }
+
+  &--local {
+    @extend .announcement-card;
+
+    border-top: 2px solid $color-accent-local;
+  }
+
+  &__header {
+    @include flex-between;
+
+    margin-bottom: $space-sm;
+  }
+
+  &__badges {
+    display: flex;
+    gap: $space-xs;
+  }
+
+  &__menu {
+    position: relative;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $color-text-primary;
+    margin-bottom: $space-sm;
+    @include truncate(2);
+  }
+
+  &__body {
+    font-size: 0.88rem;
+    color: $color-text-secondary;
+    line-height: 1.6;
+    margin-bottom: $space-md;
+    @include truncate(3);
+  }
+
+  &__footer {
+    @include flex-between;
+
+    padding-top: $space-sm;
+    border-top: 1px solid $color-border;
+  }
+
+  &__meta {
+    font-size: 0.78rem;
+    color: $color-text-muted;
+    font-family: $font-mono;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+    font-size: 0.8rem;
+    color: $color-text-muted;
+  }
+
+  &__author-avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: $color-bg-elevated;
+    @include flex-center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: $color-text-secondary;
+    font-family: $font-mono;
+  }
+}
+
+/* ---- Announcement Detail ---- */
+.announcement-detail {
+  @include card;
+
+  @include fade-in;
+
+  padding: $space-xl;
+  max-width: 800px;
+
+  &__back {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-xs;
+    color: $color-text-muted;
+    font-size: 0.85rem;
+    text-decoration: none;
+    margin-bottom: $space-xl;
+    transition: color $transition-fast;
+
+    &:hover,
+    &:visited {
+      color: $color-primary;
+    }
+  }
+
+  &__badges {
+    display: flex;
+    gap: $space-xs;
+    margin-bottom: $space-md;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 2rem;
+    font-weight: 900;
+    color: $color-text-primary;
+    margin-bottom: $space-md;
+  }
+
+  &__meta-row {
+    display: flex;
+    gap: $space-xl;
+    margin-bottom: $space-xl;
+    padding-bottom: $space-lg;
+    border-bottom: 1px solid $color-border;
+    flex-wrap: wrap;
+  }
+
+  &__meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__meta-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $color-text-muted;
+  }
+
+  &__meta-value {
+    font-size: 0.88rem;
+    color: $color-text-secondary;
+    font-family: $font-mono;
+  }
+
+  &__body {
+    font-size: 0.95rem;
+    color: $color-text-secondary;
+    line-height: 1.8;
+    margin-bottom: $space-xl;
+  }
+
+  &__level-section {
+    background: $color-bg;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: $space-md $space-lg;
+    margin-bottom: $space-xl;
+    display: flex;
+    align-items: center;
+    gap: $space-md;
+  }
+
+  &__level-icon {
+    font-size: 1.5rem;
+  }
+
+  &__level-text {
+    font-size: 0.85rem;
+    color: $color-text-secondary;
+
+    strong {
+      color: $color-text-primary;
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $space-sm;
+  }
+}
+
+/* ---- Users table ---- */
+.users-table-wrapper {
+  @include card;
+
+  overflow: hidden;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    background: $color-bg-elevated;
+  }
+
+  th {
+    padding: $space-md $space-lg;
+    text-align: left;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $color-text-muted;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: $space-md $space-lg;
+    font-size: 0.9rem;
+    color: $color-text-secondary;
+    border-top: 1px solid $color-border;
+    vertical-align: middle;
+  }
+
+  tbody tr {
+    transition: background $transition-fast;
+
+    &:hover {
+      background: $color-bg-elevated;
+    }
+
+    &:first-child td {
+      border-top: none;
+    }
+  }
+
+  @include respond-to(md) {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+
+  &__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: $color-bg-elevated;
+    border: 1px solid $color-border;
+    @include flex-center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: $color-primary;
+    font-family: $font-mono;
+    flex-shrink: 0;
+  }
+
+  &__name {
+    font-weight: 600;
+    color: $color-text-primary;
+    font-size: 0.9rem;
+  }
+
+  &__email {
+    font-size: 0.78rem;
+    color: $color-text-muted;
+    font-family: $font-mono;
+  }
+}
+
+.table-actions {
+  display: flex;
+  gap: $space-xs;
+}
+
+/* ---- Stats cards on dashboard ---- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-md;
+  margin-bottom: $space-xl;
+
+  @include respond-to(lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-card {
+  @include card;
+
+  @include fade-in;
+
+  padding: $space-lg;
+
+  &:nth-child(2) { animation-delay: 0.05s; }
+  &:nth-child(3) { animation-delay: 0.1s; }
+  &:nth-child(4) { animation-delay: 0.15s; }
+
+  &__label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $color-text-muted;
+    margin-bottom: $space-sm;
+  }
+
+  &__value {
+    font-family: $font-display;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: $color-text-primary;
+    line-height: 1;
+    margin-bottom: $space-xs;
+  }
+
+  &__change {
+    font-size: 0.8rem;
+    color: $color-success;
+
+    &--down {
+      color: $color-danger;
+    }
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    margin-bottom: $space-sm;
+  }
+}
+
+/* ---- My Announcements list ---- */
+.my-list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+
+  &__item {
+    @include card;
+
+    @include flex-between;
+
+    padding: $space-md $space-lg;
+    transition: border-color $transition-fast;
+
+    &:hover {
+      border-color: $color-border-light;
+    }
+  }
+
+  &__info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: $color-text-primary;
+    @include truncate;
+  }
+
+  &__meta {
+    font-size: 0.78rem;
+    color: $color-text-muted;
+    font-family: $font-mono;
+    margin-top: 2px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $space-xs;
+    flex-shrink: 0;
+    margin-left: $space-lg;
+  }
+}
+
+/* ---- Dropdown context menu ---- */
+.dropdown {
+  position: relative;
+
+  &__menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + $space-xs);
+    background: $color-bg-elevated;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    box-shadow: $shadow-modal;
+    min-width: 160px;
+    z-index: 200;
+    overflow: hidden;
+    @include fade-in;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+    padding: $space-sm $space-md;
+    color: $color-text-secondary;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: background $transition-fast, color $transition-fast;
+    text-decoration: none;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+
+    &:hover {
+      background: $color-bg-card;
+      color: $color-text-primary;
+    }
+
+    &--danger {
+      @extend .dropdown__item;
+
+      color: $color-danger;
+
+      &:hover {
+        background: rgba($color-danger, 0.08);
+        color: $color-danger;
+      }
+    }
+  }
+
+  &__divider {
+    height: 1px;
+    background: $color-border;
+    margin: $space-xs 0;
+  }
+}
+
+/* ---- Location picker ---- */
+.location-picker {
+  @include card;
+
+  padding: $space-lg;
+  margin-bottom: $space-xl;
+
+  &__title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $color-text-muted;
+    margin-bottom: $space-sm;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: $space-md;
+    flex-wrap: wrap;
+  }
+
+  &__indicator {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+    font-size: 0.85rem;
+    color: $color-accent-local;
+    font-family: $font-mono;
+    animation: pulse-border 2s infinite;
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    background: $color-accent-local;
+    border-radius: 50%;
+  }
+}

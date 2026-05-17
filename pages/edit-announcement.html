@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdBoard — edit announcement">
+    <meta name="author" content="Student Lab 1">
+    <title>Edit Announcement — AdBoard</title>
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body>
+
+    <div class="app-shell">
+
+      <!-- Header -->
+      <header class="site-header" role="banner">
+        <a href="../index.html" class="site-header__logo">Ad<span>Board</span></a>
+        <div class="site-header__actions">
+          <div class="site-header__location">📍 Lviv, UA</div>
+          <div class="site-header__user">
+            <div class="site-header__avatar" aria-hidden="true">JD</div>
+            <span>john_doe</span>
+          </div>
+          <a href="login.html" class="btn--secondary">Logout</a>
+          <button class="site-header__menu-toggle" aria-label="Toggle navigation" type="button">☰</button>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" role="navigation" aria-label="Main navigation">
+        <p class="sidebar__section-label">Browse</p>
+        <a href="../index.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📋</span>All Announcements
+        </a>
+        <p class="sidebar__section-label">My Content</p>
+        <a href="my-announcements.html" class="sidebar__nav-link--active" aria-current="page">
+          <span class="sidebar__nav-icon" aria-hidden="true">✏️</span>My Announcements
+        </a>
+      </nav>
+
+      <!-- Main content: edit announcement -->
+      <main class="main-content" role="main">
+
+        <a href="announcement-detail.html" class="announcement-detail__back">← Back to Announcement</a>
+
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">Edit <span>Announcement</span></h1>
+          </div>
+        </header>
+
+        <div class="announcement-detail" style="max-width:700px;">
+
+          <form action="#" method="post" novalidate>
+
+            <!-- Title -->
+            <div class="form-group">
+              <label class="form-label" for="edit-title">Title</label>
+              <input
+                class="form-input"
+                type="text"
+                id="edit-title"
+                name="title"
+                value="Apartment for rent in the city center — 2 rooms, fully furnished"
+              >
+            </div>
+
+            <!-- Body -->
+            <div class="form-group">
+              <label class="form-label" for="edit-body">Description</label>
+              <textarea
+                class="form-textarea"
+                id="edit-body"
+                name="body"
+                rows="8"
+              >Spacious 2-bedroom apartment available for rent from June 1st, 2024. Located in the heart of the city, just 5 minutes walk from Rynok Square.</textarea>
+            </div>
+
+            <!-- Visibility -->
+            <div class="form-group">
+              <label class="form-label" for="edit-visibility">Visibility</label>
+              <select class="form-select" id="edit-visibility" name="visibility">
+                <option value="public" selected>🌐 Public — visible to everyone</option>
+                <option value="local">📍 Local — visible only to users in my city</option>
+              </select>
+            </div>
+
+            <!-- Category -->
+            <div class="form-group">
+              <label class="form-label" for="edit-category">Category</label>
+              <select class="form-select" id="edit-category" name="category">
+                <option value="housing" selected>🏠 Housing</option>
+                <option value="electronics">💻 Electronics</option>
+                <option value="jobs">💼 Jobs</option>
+                <option value="events">🎉 Events</option>
+                <option value="pets">🐾 Pets</option>
+                <option value="other">📦 Other</option>
+              </select>
+            </div>
+
+            <!-- Contact -->
+            <div class="form-group">
+              <label class="form-label" for="edit-contact">Contact Info</label>
+              <input
+                class="form-input"
+                type="text"
+                id="edit-contact"
+                name="contact"
+                value="+38 (050) 123-45-67"
+              >
+            </div>
+
+            <!-- Actions -->
+            <div style="display:flex; gap:12px; margin-top:8px;">
+              <a href="announcement-detail.html" class="btn--secondary">Cancel</a>
+              <button class="btn--primary" type="submit">Save Changes</button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </body>
+</html>

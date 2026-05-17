@@ -1,0 +1,353 @@
+// ============================================================
+// _components.scss — Reusable UI components
+// ============================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+/* ---- Buttons ---- */
+.btn {
+  @include btn-base;
+}
+
+.btn--primary {
+  @extend .btn;
+
+  background: $color-primary;
+  color: $color-bg;
+
+  &:hover {
+    background: $color-primary-light;
+    box-shadow: 0 4px 20px rgba($color-primary, 0.35);
+  }
+}
+
+.btn--secondary {
+  @extend .btn;
+
+  background: transparent;
+  color: $color-text-primary;
+  border: 1px solid $color-border;
+
+  &:hover {
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+}
+
+.btn--danger {
+  @extend .btn;
+
+  background: $color-danger;
+  color: #fff;
+
+  &:hover {
+    background: $color-danger-dark;
+    box-shadow: 0 4px 20px rgba($color-danger, 0.35);
+  }
+}
+
+.btn--ghost {
+  @extend .btn;
+
+  background: transparent;
+  color: $color-text-secondary;
+  padding: $space-xs $space-sm;
+
+  &:hover {
+    color: $color-text-primary;
+    background: rgba($color-border, 0.4);
+  }
+}
+
+.btn--icon {
+  @include btn-base;
+
+  padding: $space-sm;
+  background: transparent;
+  color: $color-text-secondary;
+  border-radius: $radius-sm;
+
+  &:hover {
+    color: $color-text-primary;
+    background: $color-bg-elevated;
+  }
+}
+
+/* ---- Form elements ---- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+  margin-bottom: $space-md;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-text-secondary;
+}
+
+.form-input {
+  @include input-base;
+}
+
+.form-select {
+  @include input-base;
+
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238890b0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right $space-md center;
+  padding-right: $space-xl;
+  cursor: pointer;
+}
+
+.form-textarea {
+  @include input-base;
+
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-error {
+  font-size: 0.8rem;
+  color: $color-danger;
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+
+  &::before {
+    content: '⚠';
+    font-size: 0.75rem;
+  }
+}
+
+.form-hint {
+  font-size: 0.78rem;
+  color: $color-text-muted;
+}
+
+/* Input with error state */
+.form-input--error {
+  @extend .form-input;
+
+  border-color: $color-danger;
+
+  &:focus {
+    border-color: $color-danger;
+    box-shadow: 0 0 0 3px rgba($color-danger, 0.15);
+  }
+}
+
+/* ---- Badges ---- */
+.badge-public {
+  @include badge($color-accent-public, $color-bg);
+}
+
+.badge-local {
+  @include badge($color-accent-local, $color-bg);
+}
+
+.badge-admin {
+  @include badge($color-primary, $color-bg);
+}
+
+.badge-user {
+  @include badge($color-bg-elevated, $color-text-secondary);
+}
+
+/* ---- Notifications / Alerts ---- */
+.alert {
+  @include fade-in;
+
+  display: flex;
+  align-items: flex-start;
+  gap: $space-md;
+  padding: $space-md $space-lg;
+  border-radius: $radius-md;
+  border-left: 4px solid;
+  margin-bottom: $space-md;
+
+  &__icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+  }
+
+  &__message {
+    font-size: 0.85rem;
+    color: $color-text-secondary;
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $color-text-muted;
+    font-size: 1rem;
+    padding: 0;
+    transition: color $transition-fast;
+    flex-shrink: 0;
+
+    &:hover {
+      color: $color-text-primary;
+    }
+  }
+}
+
+.alert--error {
+  @extend .alert;
+
+  background: rgba($color-danger, 0.08);
+  border-color: $color-danger;
+
+  .alert__icon,
+  .alert__title {
+    color: $color-danger;
+  }
+}
+
+.alert--success {
+  @extend .alert;
+
+  background: rgba($color-success, 0.08);
+  border-color: $color-success;
+
+  .alert__icon,
+  .alert__title {
+    color: $color-success;
+  }
+}
+
+.alert--warning {
+  @extend .alert;
+
+  background: rgba($color-warning, 0.08);
+  border-color: $color-warning;
+
+  .alert__icon,
+  .alert__title {
+    color: $color-warning;
+  }
+}
+
+/* ---- Modal overlay ---- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba($color-bg, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: $space-md;
+}
+
+.modal {
+  @include card;
+
+  @include fade-in;
+
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: $shadow-modal;
+
+  &__header {
+    @include flex-between;
+
+    padding: $space-lg $space-xl;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 1.3rem;
+    color: $color-text-primary;
+  }
+
+  &__body {
+    padding: $space-xl;
+  }
+
+  &__footer {
+    @include flex-between;
+
+    padding: $space-lg $space-xl;
+    border-top: 1px solid $color-border;
+    gap: $space-md;
+  }
+}
+
+/* ---- Empty state ---- */
+.empty-state {
+  @include flex-center;
+
+  flex-direction: column;
+  gap: $space-md;
+  padding: $space-2xl;
+  text-align: center;
+
+  &__icon {
+    font-size: 3rem;
+    opacity: 0.3;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 1.2rem;
+    color: $color-text-secondary;
+  }
+
+  &__desc {
+    font-size: 0.9rem;
+    color: $color-text-muted;
+    max-width: 300px;
+  }
+}
+
+/* ---- Tabs ---- */
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid $color-border;
+  margin-bottom: $space-xl;
+}
+
+.tab {
+  padding: $space-sm $space-lg;
+  color: $color-text-muted;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color $transition-fast, border-color $transition-fast;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    color: $color-text-primary;
+  }
+
+  &--active {
+    @extend .tab;
+
+    color: $color-primary;
+    border-bottom-color: $color-primary;
+  }
+}

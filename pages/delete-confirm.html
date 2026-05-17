@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdBoard — confirm announcement deletion">
+    <meta name="author" content="Student Lab 1">
+    <title>Delete Announcement — AdBoard</title>
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body>
+
+    <div class="app-shell">
+
+      <!-- Header -->
+      <header class="site-header" role="banner">
+        <a href="../index.html" class="site-header__logo">Ad<span>Board</span></a>
+        <div class="site-header__actions">
+          <div class="site-header__user">
+            <div class="site-header__avatar" aria-hidden="true">JD</div>
+            <span>john_doe</span>
+          </div>
+          <a href="login.html" class="btn--secondary">Logout</a>
+          <button class="site-header__menu-toggle" aria-label="Toggle navigation" type="button">☰</button>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" role="navigation" aria-label="Main navigation">
+        <p class="sidebar__section-label">My Content</p>
+        <a href="my-announcements.html" class="sidebar__nav-link--active" aria-current="page">
+          <span class="sidebar__nav-icon" aria-hidden="true">✏️</span>My Announcements
+        </a>
+      </nav>
+
+      <!-- Main content: delete confirmation -->
+      <main class="main-content" role="main">
+
+        <a href="announcement-detail.html" class="announcement-detail__back">← Back to Announcement</a>
+
+        <div class="announcement-detail" style="max-width:500px;">
+
+          <!-- Warning alert -->
+          <div class="alert--warning" role="alert">
+            <span class="alert__icon" aria-hidden="true">⚠</span>
+            <div class="alert__content">
+              <p class="alert__title">This cannot be undone</p>
+              <p class="alert__message">
+                The announcement will be permanently removed from the platform.
+              </p>
+            </div>
+          </div>
+
+          <h1 class="announcement-detail__title">Delete Announcement?</h1>
+
+          <div class="announcement-detail__meta-row">
+            <div class="announcement-detail__meta-item">
+              <span class="announcement-detail__meta-label">Title</span>
+              <span class="announcement-detail__meta-value">
+                Apartment for rent in the city center — 2 rooms, fully furnished
+              </span>
+            </div>
+            <div class="announcement-detail__meta-item">
+              <span class="announcement-detail__meta-label">Published</span>
+              <span class="announcement-detail__meta-value">
+                <time datetime="2024-05-10">May 10, 2024</time>
+              </span>
+            </div>
+          </div>
+
+          <!-- Confirm / cancel -->
+          <div class="announcement-detail__actions">
+            <a href="announcement-detail.html" class="btn--secondary">Cancel</a>
+            <a href="my-announcements.html" class="btn--danger">Yes, Delete</a>
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdBoard — local announcements for your city">
+    <meta name="author" content="Student Lab 1">
+    <title>Local Announcements — AdBoard</title>
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body>
+
+    <div class="app-shell">
+
+      <!-- Header -->
+      <header class="site-header" role="banner">
+        <a href="../index.html" class="site-header__logo">Ad<span>Board</span></a>
+        <div class="site-header__actions">
+          <div class="site-header__location">📍 Lviv, UA</div>
+          <div class="site-header__user">
+            <div class="site-header__avatar" aria-hidden="true">JD</div>
+            <span>john_doe</span>
+          </div>
+          <a href="login.html" class="btn--secondary">Logout</a>
+          <button class="site-header__menu-toggle" aria-label="Toggle navigation" type="button">☰</button>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" role="navigation" aria-label="Main navigation">
+        <p class="sidebar__section-label">Browse</p>
+        <a href="../index.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📋</span>All Announcements
+        </a>
+        <a href="public.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">🌐</span>Public
+        </a>
+        <a href="local.html" class="sidebar__nav-link--active" aria-current="page">
+          <span class="sidebar__nav-icon" aria-hidden="true">📍</span>Local (Lviv)
+          <span class="sidebar__count">14</span>
+        </a>
+        <p class="sidebar__section-label">My Content</p>
+        <a href="my-announcements.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">✏️</span>My Announcements
+        </a>
+      </nav>
+
+      <!-- Main content -->
+      <main class="main-content" role="main">
+
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">Local <span>Lviv</span></h1>
+            <p class="page-header__subtitle">14 announcements visible to registered users in Lviv</p>
+          </div>
+          <div class="page-header__actions">
+            <a href="create-announcement.html" class="btn--primary">+ New</a>
+          </div>
+        </header>
+
+        <!-- Location banner -->
+        <div class="location-picker">
+          <p class="location-picker__title">Your current location</p>
+          <div class="location-picker__row">
+            <div class="location-picker__indicator">
+              <div class="location-picker__dot"></div>
+              Lviv, Lviv Oblast, UA
+            </div>
+            <span style="font-size:0.82rem; color:#565e80;">
+              Only announcements from users in the same city are shown here.
+              You must be logged in to see local announcements.
+            </span>
+          </div>
+        </div>
+
+        <!-- Filter bar -->
+        <div class="filter-bar">
+          <input
+            class="filter-bar__search"
+            type="search"
+            placeholder="Search local announcements…"
+            aria-label="Search local announcements"
+          >
+          <select class="filter-bar__select" aria-label="Sort by">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </div>
+
+        <!-- Local-only announcements grid -->
+        <section aria-label="Local announcements">
+          <div class="announcement-grid">
+
+            <article class="announcement-card--local">
+              <header class="announcement-card__header">
+                <span class="badge-local">Local · Lviv</span>
+                <button class="btn--icon" aria-label="Options" type="button">⋯</button>
+              </header>
+              <a href="announcement-detail.html">
+                <h2 class="announcement-card__title">Lost cat — grey tabby, answers to "Smoke"</h2>
+              </a>
+              <p class="announcement-card__body">
+                Last seen near Svobody Avenue on Sunday evening. Reward offered. Contact Maria.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">MK</div>
+                  <span>m_kovalenko</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-05-12">May 12, 2024</time>
+              </footer>
+            </article>
+
+            <article class="announcement-card--local">
+              <header class="announcement-card__header">
+                <span class="badge-local">Local · Lviv</span>
+                <button class="btn--icon" aria-label="Options" type="button">⋯</button>
+              </header>
+              <a href="announcement-detail.html">
+                <h2 class="announcement-card__title">Community clean-up event — Stryiskyi Park, Saturday</h2>
+              </a>
+              <p class="announcement-card__body">
+                Join your neighbours! Gloves and bags provided. Coffee and sandwiches after.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">OP</div>
+                  <span>o_petryk</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-05-14">May 14, 2024</time>
+              </footer>
+            </article>
+
+            <article class="announcement-card--local">
+              <header class="announcement-card__header">
+                <span class="badge-local">Local · Lviv</span>
+                <button class="btn--icon" aria-label="Options" type="button">⋯</button>
+              </header>
+              <a href="announcement-detail.html">
+                <h2 class="announcement-card__title">Free yoga classes every Tuesday morning — Rynok Square</h2>
+              </a>
+              <p class="announcement-card__body">
+                Open-air yoga for all levels. Bring your own mat. Starts at 7:30 AM.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">OH</div>
+                  <span>o_halenko</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-05-13">May 13, 2024</time>
+              </footer>
+            </article>
+
+            <article class="announcement-card--local">
+              <header class="announcement-card__header">
+                <span class="badge-local">Local · Lviv</span>
+                <button class="btn--icon" aria-label="Options" type="button">⋯</button>
+              </header>
+              <a href="announcement-detail.html">
+                <h2 class="announcement-card__title">Free guitar lessons for beginners — Saturdays, 10:00 AM</h2>
+              </a>
+              <p class="announcement-card__body">
+                Drop-in sessions held in Shevchenko Park bandstand. No experience needed.
+              </p>
+              <footer class="announcement-card__footer">
+                <div class="announcement-card__author">
+                  <div class="announcement-card__author-avatar" aria-hidden="true">JD</div>
+                  <span>john_doe</span>
+                </div>
+                <time class="announcement-card__meta" datetime="2024-05-03">May 3, 2024</time>
+              </footer>
+            </article>
+
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+
+  </body>
+</html>

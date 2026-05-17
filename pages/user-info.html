@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdBoard — user profile information">
+    <meta name="author" content="Student Lab 1">
+    <title>User Info — AdBoard</title>
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body>
+
+    <div class="app-shell">
+
+      <!-- Header -->
+      <header class="site-header" role="banner">
+        <a href="../index.html" class="site-header__logo">Ad<span>Board</span></a>
+        <div class="site-header__actions">
+          <div class="site-header__location">📍 Lviv, UA</div>
+          <div class="site-header__user">
+            <div class="site-header__avatar" aria-hidden="true">AD</div>
+            <span>admin</span>
+            <span class="badge-admin">Admin</span>
+          </div>
+          <a href="login.html" class="btn--secondary">Logout</a>
+          <button class="site-header__menu-toggle" aria-label="Toggle navigation" type="button">☰</button>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" role="navigation" aria-label="Main navigation">
+        <p class="sidebar__section-label">Browse</p>
+        <a href="../index.html" class="sidebar__nav-link">
+          <span class="sidebar__nav-icon" aria-hidden="true">📋</span>All Announcements
+        </a>
+        <p class="sidebar__section-label">Administration</p>
+        <a href="users.html" class="sidebar__nav-link--active" aria-current="page">
+          <span class="sidebar__nav-icon" aria-hidden="true">👥</span>Manage Users
+        </a>
+      </nav>
+
+      <!-- Main content: user detail card -->
+      <main class="main-content" role="main">
+
+        <a href="users.html" class="announcement-detail__back">← Back to Users</a>
+
+        <div class="announcement-detail">
+
+          <div class="announcement-detail__badges">
+            <span class="badge-user">Regular User</span>
+          </div>
+
+          <h1 class="announcement-detail__title">john_doe</h1>
+
+          <!-- User meta information -->
+          <div class="announcement-detail__meta-row">
+            <div class="announcement-detail__meta-item">
+              <span class="announcement-detail__meta-label">Email</span>
+              <span class="announcement-detail__meta-value">john@example.com</span>
+            </div>
+            <div class="announcement-detail__meta-item">
+              <span class="announcement-detail__meta-label">Location</span>
+              <span class="announcement-detail__meta-value">Lviv, UA</span>
+            </div>
+            <div class="announcement-detail__meta-item">
+              <span class="announcement-detail__meta-label">Joined</span>
+              <span class="announcement-detail__meta-value">
+                <time datetime="2024-02-14">Feb 14, 2024</time>
+              </span>
+            </div>
+            <div class="announcement-detail__meta-item">
+              <span class="announcement-detail__meta-label">Total Posts</span>
+              <span class="announcement-detail__meta-value">5</span>
+            </div>
+          </div>
+
+          <!-- User stats summary -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <p class="stat-card__icon">📋</p>
+              <p class="stat-card__label">Total Posts</p>
+              <p class="stat-card__value">5</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-card__icon">🌐</p>
+              <p class="stat-card__label">Public</p>
+              <p class="stat-card__value">3</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-card__icon">📍</p>
+              <p class="stat-card__label">Local</p>
+              <p class="stat-card__value">2</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-card__icon">📅</p>
+              <p class="stat-card__label">This Month</p>
+              <p class="stat-card__value">2</p>
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="announcement-detail__actions">
+            <a href="edit-user.html" class="btn--primary">✏️ Edit User</a>
+            <a href="delete-user.html" class="btn--danger">🗑 Delete User</a>
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </body>
+</html>

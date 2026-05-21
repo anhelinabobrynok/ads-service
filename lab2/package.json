@@ -1,0 +1,19 @@
+{
+  "name": "adboard-lab2",
+  "version": "1.0.0",
+  "description": "AdBoard SPA — Lab 2: Client-server interaction with pure JS, AJAX, ESLint",
+  "main": "src/main.js",
+  "scripts": {
+    "lint": "eslint **/*.js --ignore-pattern node_modules/",
+    "start": "npx serve . -p 3000",
+    "mock-api": "npx json-server --watch public/data/db.json --port 3001"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1"
+  },
+  "keywords": [],
+  "author": "Student",
+  "license": "ISC"
+}

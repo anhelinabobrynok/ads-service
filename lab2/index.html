@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdBoard — community announcement board SPA">
+    <meta name="author" content="Student Lab 2">
+    <title>AdBoard</title>
+
+    <!-- Main stylesheet (compiled from SCSS in lab1, referenced here) -->
+    <link rel="stylesheet" href="public/css/main.css">
+  </head>
+  <body>
+
+    <!-- ===================================================== -->
+    <!-- App shell: fixed header, sidebar, dynamic main        -->
+    <!-- ===================================================== -->
+    <div class="app-shell">
+
+      <!-- Site header — rendered by shell.js -->
+      <header id="site-header" class="site-header" role="banner"></header>
+
+      <!-- Sidebar navigation — rendered by shell.js -->
+      <aside id="sidebar" class="sidebar" role="complementary" hidden></aside>
+
+      <!-- Main content area — each route renders into this -->
+      <main id="app-main" class="main-content" role="main"></main>
+
+    </div>
+
+    <!-- Notification container — notify utility appends alerts here -->
+    <div id="notifications" aria-live="polite" aria-atomic="false"></div>
+
+    <!-- SPA entry point (ES module) -->
+    <script type="module" src="src/main.js"></script>
+
+  </body>
+</html>

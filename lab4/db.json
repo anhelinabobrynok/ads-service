@@ -1,0 +1,123 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin",
+      "location": "Lviv",
+      "email": "admin@adboard.io",
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "username": "john_doe",
+      "password": "pass1234",
+      "role": "regular",
+      "location": "Lviv",
+      "email": "john@example.com",
+      "createdAt": "2024-02-14T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "username": "m_kovalenko",
+      "password": "pass1234",
+      "role": "regular",
+      "location": "Lviv",
+      "email": "maria.k@example.com",
+      "createdAt": "2024-03-05T09:00:00Z"
+    },
+    {
+      "id": 4,
+      "username": "s_andriy",
+      "password": "pass1234",
+      "role": "regular",
+      "location": "Kyiv",
+      "email": "s.andriy@example.com",
+      "createdAt": "2024-03-20T08:00:00Z"
+    },
+    {
+      "id": 5,
+      "username": "v_roman",
+      "password": "pass1234",
+      "role": "admin",
+      "location": "Odesa",
+      "email": "v.roman@example.com",
+      "createdAt": "2024-04-01T12:00:00Z"
+    }
+  ],
+  "announcements": [
+    {
+      "id": 1,
+      "title": "Apartment for rent in the city center",
+      "body": "Spacious 2-bedroom apartment available from June 1st. Includes all furniture, high-speed internet, and parking.",
+      "visibility": "public",
+      "category": "housing",
+      "authorId": 2,
+      "authorName": "john_doe",
+      "location": "Lviv",
+      "contact": "+38 (050) 123-45-67",
+      "createdAt": "2024-05-10T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Lost cat — grey tabby, answers to Smoke",
+      "body": "Last seen near Svobody Avenue on Sunday evening. Reward offered.",
+      "visibility": "local",
+      "category": "pets",
+      "authorId": 3,
+      "authorName": "m_kovalenko",
+      "location": "Lviv",
+      "contact": "+38 (067) 987-65-43",
+      "createdAt": "2024-05-12T14:00:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Selling MacBook Pro M3 — excellent condition",
+      "body": "16 GB RAM, 512 GB SSD. Purchased 6 months ago. Includes original charger and box.",
+      "visibility": "public",
+      "category": "electronics",
+      "authorId": 4,
+      "authorName": "s_andriy",
+      "location": "Kyiv",
+      "contact": "s.andriy@example.com",
+      "createdAt": "2024-05-08T09:00:00Z"
+    },
+    {
+      "id": 4,
+      "title": "Community clean-up event — Stryiskyi Park",
+      "body": "Join your neighbours for a morning clean-up. Gloves and bags provided.",
+      "visibility": "local",
+      "category": "events",
+      "authorId": 3,
+      "authorName": "m_kovalenko",
+      "location": "Lviv",
+      "contact": "maria.k@example.com",
+      "createdAt": "2024-05-14T08:00:00Z"
+    },
+    {
+      "id": 5,
+      "title": "Looking for a co-founder for EdTech startup",
+      "body": "Building an online tutoring platform. Looking for a technical co-founder with React and Node.js experience.",
+      "visibility": "public",
+      "category": "jobs",
+      "authorId": 5,
+      "authorName": "v_roman",
+      "location": "Odesa",
+      "contact": "v.roman@example.com",
+      "createdAt": "2024-05-06T11:00:00Z"
+    },
+    {
+      "id": 6,
+      "title": "Free yoga classes every Tuesday morning",
+      "body": "Open-air yoga for all levels. Bring your own mat. Starts at 7:30 AM.",
+      "visibility": "local",
+      "category": "events",
+      "authorId": 3,
+      "authorName": "m_kovalenko",
+      "location": "Lviv",
+      "contact": "o_halenko@example.com",
+      "createdAt": "2024-05-13T07:00:00Z"
+    }
+  ]
+}

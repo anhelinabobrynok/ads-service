@@ -1,0 +1,29 @@
+{
+  "name": "adboard-lab4",
+  "version": "1.0.0",
+  "description": "AdBoard SPA — Lab 4: Variant-specific functionality (Dashboard, category filter, debounced search)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 8000",
+    "build": "vite build",
+    "preview": "vite preview --port 8000",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --ignore-pattern node_modules/",
+    "mock-api": "json-server --watch db.json --port 3001"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "json-server": "^0.17.4",
+    "vite": "^5.1.4"
+  }
+}
